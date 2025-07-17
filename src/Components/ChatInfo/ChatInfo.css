@@ -1,0 +1,7 @@
+.chat-info-container{
+    height: 100vh;
+    width: 410px;
+    background-color: #0c1317;
+    position: relative;
+    z-index: 2;
+}
