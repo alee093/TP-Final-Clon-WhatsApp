@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import './ChatMessages.css'
 import { useMessage } from '../../Context/MessagesContext'
+import ChatMenu from '../ChatMenu/ChatMenu'
+import { useMenu } from '../../Context/MenuContext'
 
 const ChatMessages = () => {
     const { messages } = useMessage()
     const bottomRef = useRef(null)
+    const { menu } = useMenu()
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -28,6 +31,7 @@ const ChatMessages = () => {
                 </div>
             ))}
             <div ref={bottomRef} />
+            {menu && <ChatMenu/>}
         </div>
     )
 }

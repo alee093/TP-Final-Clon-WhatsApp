@@ -30,6 +30,11 @@ export const MessagesProvider = ({ children }) => {
                 addMessage("¿Qué querés hacer con el estacionamiento? Escribir: tiempo, tarifas o pagar.", "bot")
             }, 1000)
         }
+        else if (message.includes("hola")) {
+            setTimeout(() => {
+                addMessage("Hola, ¿en que puedo ayudarte sobre su estacionamiento? Escribir: tiempo, tarifas o pagar.", "bot")
+            }, 1000)
+        }
         else if (message.includes("pagar")) {
             setTimeout(() => {
                 addMessage("Perfecto, le genero el link de pago. https://mpago.la/1NmB529", "bot")
@@ -45,6 +50,16 @@ export const MessagesProvider = ({ children }) => {
                 addMessage("Las tarifas son de $100 por hora.", "bot")
             }, 1000)
         }
+        else if (message.includes("gracias")) {
+            setTimeout(() => {
+                addMessage("No te preocupes, estoy aqui para ayudarte!", "bot")
+            }, 1000)
+        }
+        else if (message.includes("chau")) {
+            setTimeout(() => {
+                addMessage("Hasta luego!", "bot")
+            }, 1000)
+        }
         else{
             setTimeout(() => {
                 addMessage("Perdón, no entiendo lo que me decís. 😕", "bot")
@@ -57,7 +72,7 @@ export const MessagesProvider = ({ children }) => {
     }
 
     return (
-        <MessagesContext.Provider value={{ messages, addMessage }}>
+        <MessagesContext.Provider value={{ messages, addMessage, removeMessage, setMessages }}>
             {children}
         </MessagesContext.Provider>
     )

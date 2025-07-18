@@ -1,0 +1,102 @@
+.chat-search-container{
+    height: 100vh;
+    width: 410px;
+    background-color: #111b21;
+    position: relative;
+    z-index: 2;
+    border-left: 1px solid #222c33;
+}
+.chat-search-header{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+    gap: 25px;
+}
+.chat-search-header-text{
+    color: #e9edf0;
+    font-size: 16px;
+    font-weight: 400;
+}
+.chat-search-input-container{
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: 44px;
+}
+.chat-search-calendar-icon{
+    margin-right: 10px;
+}
+.search-messages-form{
+    height: 35px;
+    background-color: #202c33;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.search-messages-submit-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.search-messages-input{
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: #e9edf0;
+    font-size: 15px;
+    padding: 0 10px;
+    width: 100%;
+    outline: none;
+}
+.search-messages-input::placeholder{
+    color: #8797a1;
+}
+.chat-search-results{
+    overflow-y: scroll;
+    max-height: 565px;
+    position: relative;
+    z-index: 2;
+}
+.chat-search-results::-webkit-scrollbar {
+    width: 3px; 
+}
+.chat-search-results::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.chat-search-results::-webkit-scrollbar-thumb {
+    background-color: #88888833;
+    border-radius: 4px;
+}
+.chat-search-results::-webkit-scrollbar-thumb:hover {
+    background: #88888833;
+}
+.chat-search-message{
+    height: 72px;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    border-top: 1px solid #222c33;
+    cursor: pointer;
+}
+.chat-search-message:hover{
+    background-color: #202c33;
+}
+.chat-search-message-time{
+    color: #8696A0;
+    font-size: 12px;
+    font-weight: 400;
+}
+.chat-search-message-text{
+    color: #8696A0;
+    font-size: 14px;
+    font-weight: 400;
+}
