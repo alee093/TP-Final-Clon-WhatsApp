@@ -11,6 +11,7 @@ import ChatSearch from '../ChatSearch/ChatSearch'
 const ChatContainer = () => {
     const {search} = useSearch()
     const {info} = useInfo()
+
     return (
         <div className='chat-container'>
             <div className='chat-background'></div>
