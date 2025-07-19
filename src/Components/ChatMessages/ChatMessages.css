@@ -1,5 +1,5 @@
 .chat-messages-container{
-    height: 100%;
+    height: calc(100vh - 128px);
     position: relative;
     z-index: 2;
     padding: 15px 55px;

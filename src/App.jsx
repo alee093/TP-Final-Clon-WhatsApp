@@ -6,24 +6,27 @@ import { MenuProvider } from './Context/MenuContext'
 import { SearchProvider } from './Context/SearchContext'
 import AppRouter from './routes/AppRouter'
 import { DownloadWindowProvider } from './Context/DownloadWindowContext'
+import { ChatsListButtonsProvider } from './Context/ChatsListButtonsContext'
 
 function App() {
 
   return (
     <div>
-      <DownloadWindowProvider>
-        <SearchProvider>
-          <MenuProvider>
-            <ProfileImageProvider>
-              <InfoProvider>
-                <MessagesProvider>
-                  <AppRouter />
-                </MessagesProvider>
-              </InfoProvider>
-            </ProfileImageProvider>
-          </MenuProvider>
-        </SearchProvider>
-      </DownloadWindowProvider>
+      <ChatsListButtonsProvider>
+        <DownloadWindowProvider>
+          <SearchProvider>
+            <MenuProvider>
+              <ProfileImageProvider>
+                <InfoProvider>
+                  <MessagesProvider>
+                    <AppRouter />
+                  </MessagesProvider>
+                </InfoProvider>
+              </ProfileImageProvider>
+            </MenuProvider>
+          </SearchProvider>
+        </DownloadWindowProvider>
+      </ChatsListButtonsProvider>
     </div>
   )
 }

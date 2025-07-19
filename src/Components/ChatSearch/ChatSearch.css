@@ -60,7 +60,7 @@
 }
 .chat-search-results{
     overflow-y: scroll;
-    max-height: 565px;
+    height: calc(100dvh - 108px);
     position: relative;
     z-index: 2;
 }

@@ -4,10 +4,16 @@ import ChatsListContact from '../ChatsListContact/ChatsListContact'
 import { aeropuertoBot } from '../../utils/contact'
 import { useMessage } from '../../Context/MessagesContext'
 import ChatListNotFound from '../ChatsListContact/ChatListNotFound'
+import { useChatsListButtons } from '../../Context/ChatsListButtonsContext'
+import NoReadChats from '../NoChats/NoReadChats'
+import NoFavoriteChats from '../NoChats/NoFavoriteChats'
+import NoGroups from '../NoChats/NoGroups'
+
 
 
 const ChatsListContainer = () => {
     const { messages } = useMessage()
+    const { all, read, favorites, groups, setAll, setRead, setFavorites, setGroups } = useChatsListButtons()
     const [searchTerm, setSearchTerm] = useState("")
 
     const lastMessage = messages[messages.length - 1]?.text.toLowerCase() || ""
@@ -35,14 +41,17 @@ const ChatsListContainer = () => {
                     <input className='chats-list-input' type='text' placeholder='Buscar' name='search' autoComplete='off' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}></input>
                 </form>
                 <div className='chats-list-buttons-container'>
-                    <button className="chats-list-buttons">Todos</button>
-                    <button className="chats-list-buttons">No leídos</button>
-                    <button className="chats-list-buttons">Favoritos</button>
-                    <button className="chats-list-buttons">Grupos</button>
+                    <button className={all ? "chats-list-buttons-active" : "chats-list-buttons"} onClick={() => {setAll(true); setRead(false); setFavorites(false); setGroups(false)}}>Todos</button>
+                    <button className={read ? "chats-list-buttons-active" : "chats-list-buttons"} onClick={() => {setAll(false); setRead(true); setFavorites(false); setGroups(false)}}>No leídos</button>
+                    <button className={favorites ? "chats-list-buttons-active" : "chats-list-buttons"} onClick={() => {setAll(false); setRead(false); setFavorites(true); setGroups(false)}}>Favoritos</button>
+                    <button className={groups ? "chats-list-buttons-active" : "chats-list-buttons"} onClick={() => {setAll(false); setRead(false); setFavorites(false); setGroups(true)}}>Grupos</button>
                 </div>
             </div>
-            {matchesFilter && <ChatsListContact />}
+            {matchesFilter && !read && !favorites && !groups && <ChatsListContact />}
             {!matchesFilter && <ChatListNotFound />}
+            {read && <NoReadChats /> }
+            {favorites && <NoFavoriteChats /> }
+            {groups && <NoGroups /> }
         </div>
     )
 }
