@@ -1,11 +1,12 @@
 .chat-messages-container{
-    height: calc(100vh - 128px);
+    max-height: calc(100vh - 128px);
     position: relative;
     z-index: 2;
     padding: 15px 55px;
     overflow-y: scroll;
     max-width: calc(100vw - 414px);
     width: 100%;
+    overflow-x: hidden;
 }
 .container-for-menu{
     height: 100%;
@@ -41,12 +42,13 @@
     color: #e9edf0;
     max-width: 65%;
     margin-bottom: 10px;
-    display: flex;
     position: relative;
 }
 .chat-message-text{
     word-break: break-word;
-    margin-right: 80px;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    padding-right: 80px
 }
 .chat-time-seen-container{
     display: flex;
@@ -94,7 +96,6 @@
     color: #e9edf0;
     max-width: 65%;
     margin-bottom: 10px;
-    display: flex;
     position: relative;
 }
 .tail-bot{

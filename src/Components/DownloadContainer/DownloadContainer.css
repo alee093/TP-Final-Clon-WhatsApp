@@ -1,6 +1,6 @@
 .download-container{
     height: 100vh;
-    width: calc(100vw - 414px);
+    width: 100%;
     background-color: #222e36;
     border-left: 1px solid #222c33;
     display: flex;

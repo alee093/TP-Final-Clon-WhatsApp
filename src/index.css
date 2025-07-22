@@ -7,8 +7,5 @@
   font-family: 'Inter', sans-serif;
 }
 body{
-  display: flex;
   position: relative;
-  width: 100%;
-  height: 100dvh;
 }
