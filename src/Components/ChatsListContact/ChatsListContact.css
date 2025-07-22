@@ -32,6 +32,7 @@
     width: 100%;
     max-width: 310px;
     border-top: 1px solid #222c33;
+    border-bottom: 1px solid #222c33;
     height: 100%;
 }
 .chats-list-contact-name{

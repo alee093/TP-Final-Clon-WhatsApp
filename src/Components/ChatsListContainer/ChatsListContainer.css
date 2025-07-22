@@ -1,9 +1,11 @@
 .chats-list-container{
     height: 100vh;
-    width: 406px;
+    max-width: 410px;
+    width: 100%;
     background-color: #111b21;
     z-index: 2;
     position: relative;
+    border-left: 2px solid #2e3a42;
 }
 .chats-list-header{
     display: flex;

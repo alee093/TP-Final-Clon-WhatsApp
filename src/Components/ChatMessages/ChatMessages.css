@@ -4,6 +4,8 @@
     z-index: 2;
     padding: 15px 55px;
     overflow-y: scroll;
+    max-width: calc(100vw - 414px);
+    width: 100%;
 }
 .container-for-menu{
     height: 100%;
@@ -68,6 +70,13 @@
 .tail-icon-user{
     fill: #005c4b;
 }
+.check-user{
+    fill: #659c92;
+    position: absolute;
+    right: 3px;
+    top: 0;
+    display: none;
+}
 
 /* Mensajes de bot */
 .chat-message-bot-container{
@@ -100,4 +109,46 @@
     fill: #202c33;
     transform: rotateY(180deg);
 }
+.check-bot{
+    fill: #787e82;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    display: none;
+}
 
+.chat-message-bot:hover{
+    cursor: pointer;
+}
+.chat-message-bot:hover .check-bot{
+    display: block;
+}
+.chat-message-user:hover{
+    cursor: pointer;
+}
+.chat-message-user:hover .check-user{
+    display: block;
+}
+
+.message-menu-box{
+    width: 150px;
+    padding: 10px 0;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background-color: #233138;
+    border-radius: 5px;
+    z-index: 3;
+}
+.message-box-option{
+    display: flex;
+    align-items: center;
+    color: #d1d7db;
+    font-size: 15px;
+    padding-left: 24px;
+    height: 40px;
+    cursor: pointer;
+}
+.message-box-option:hover{
+    background-color: #111b21;
+}

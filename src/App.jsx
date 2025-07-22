@@ -7,26 +7,29 @@ import { SearchProvider } from './Context/SearchContext'
 import AppRouter from './routes/AppRouter'
 import { DownloadWindowProvider } from './Context/DownloadWindowContext'
 import { ChatsListButtonsProvider } from './Context/ChatsListButtonsContext'
+import { HeaderButtonsProvider } from './Context/HeaderButtonsContext'
 
 function App() {
 
   return (
     <div>
-      <ChatsListButtonsProvider>
-        <DownloadWindowProvider>
-          <SearchProvider>
-            <MenuProvider>
-              <ProfileImageProvider>
-                <InfoProvider>
-                  <MessagesProvider>
-                    <AppRouter />
-                  </MessagesProvider>
-                </InfoProvider>
-              </ProfileImageProvider>
-            </MenuProvider>
-          </SearchProvider>
-        </DownloadWindowProvider>
-      </ChatsListButtonsProvider>
+      <HeaderButtonsProvider>
+        <ChatsListButtonsProvider>
+          <DownloadWindowProvider>
+            <SearchProvider>
+              <MenuProvider>
+                <ProfileImageProvider>
+                  <InfoProvider>
+                    <MessagesProvider>
+                      <AppRouter />
+                    </MessagesProvider>
+                  </InfoProvider>
+                </ProfileImageProvider>
+              </MenuProvider>
+            </SearchProvider>
+          </DownloadWindowProvider>
+        </ChatsListButtonsProvider>
+      </HeaderButtonsProvider>
     </div>
   )
 }

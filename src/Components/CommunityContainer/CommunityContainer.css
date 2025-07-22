@@ -1,0 +1,47 @@
+.community-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 35px;
+}
+.community-title{
+    font-size: 24px;
+    color: #e9edf0;
+    font-weight: 600;
+    margin-top: 24px;
+    text-align: center;
+    line-height: 35px;
+}
+.community-description{
+    font-size: 14px;
+    color: #d1d7db;
+    font-weight: 400;
+    margin-top: 8px;
+    text-align: center;
+    line-height: 20px;
+}
+.community-link-text{
+    margin-top: 10px;
+}
+.community-link{
+    font-size: 14px;
+    color: #00a884;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+.community-link:hover{
+    text-decoration: underline;
+}
+.community-button{
+    padding: 10px 24px;
+    background-color: #00a884;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #111b21;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 40px;
+}

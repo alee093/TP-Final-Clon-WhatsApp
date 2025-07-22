@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef} from 'react'
 import './ChatMenu.css'
 import { useInfo } from '../../Context/InfoContext'
 import { useMenu } from '../../Context/MenuContext'
@@ -11,8 +11,21 @@ const ChatMenu = () => {
     const {menu, setMenu} = useMenu()
     const {setMessages} = useMessage()
     const navigate = useNavigate()
+    const menuRef = useRef(null)
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setMenu(false)
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [menuRef])
     return (
-        <div className='chat-menu-container'>
+        <div ref={menuRef} className='chat-menu-container'>
             <div className='menu-options' onClick={() => {
                     setInfo(true)
                     setMenu(!menu)
