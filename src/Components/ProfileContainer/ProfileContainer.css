@@ -1,0 +1,41 @@
+.profile-image-large{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    margin: 28px 0;
+}
+.profile-image-container{
+    display: flex;
+    justify-content: center;
+}
+.profile-info-container{
+    display: flex;
+    flex-direction: column;
+    padding: 14px 30px;
+}
+.profile-your-name{
+    font-size: 14px;
+    color: #008069;
+    font-weight: 400;
+}
+.profile-name{
+    font-size: 16px;
+    color: #d1d7db;
+    font-weight: 400;
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.profile-warning{
+    font-size: 14px;
+    color: #aebac1;
+    font-weight: 400;
+    margin: 24px 0 46px 0;
+}
+.profile-edit-button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

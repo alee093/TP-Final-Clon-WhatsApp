@@ -8,6 +8,7 @@ import StatusContainer from '../../Components/StatusContainer/StatusContainer'
 import ChannelsContainer from '../../Components/ChannelsContainer/ChannelsContainer'
 import CommunityContainer from '../../Components/CommunityContainer/CommunityContainer'
 import SettingsContainer from '../../Components/SettingsContainer/SettingsContainer'
+import ProfileContainer from '../../Components/ProfileContainer/ProfileContainer'
 
 const DownloadScreen = () => {
     const {chat, status, channels, community, settings, profile} = useHeaderButtons()
@@ -19,6 +20,7 @@ const DownloadScreen = () => {
             {channels && <ChannelsContainer />}
             {community && <CommunityContainer />}
             {settings && <SettingsContainer />}
+            {profile && <ProfileContainer />}
             <DownloadContainer />
         </div>
     )
