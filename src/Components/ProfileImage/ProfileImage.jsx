@@ -1,8 +1,7 @@
 import React from 'react'
 import './ProfileImage.css'
 import { useProfileImage } from '../../Context/ProfileImageContext'
-import profile from '../../assets/aeropuerto-profile.png'
-import {aeropuertoBot} from '../../utils/contact'
+import {aeropuertoBot} from '../../services/contact'
 
 const ProfileImage = () => {
     const {setProfileImage} = useProfileImage()
@@ -18,7 +17,7 @@ const ProfileImage = () => {
             </button>
             </header>
             <div className='profile-image-body'>
-                <img src={profile} alt="profile" className='profile-image-large'/>
+                <img src="/images/aeropuerto-profile.png" alt="profile" className='profile-image-large'/>
             </div>
         </div>
     )

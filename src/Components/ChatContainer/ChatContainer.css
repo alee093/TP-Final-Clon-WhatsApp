@@ -7,7 +7,7 @@
     position: relative;
 }
 .chat-background{
-    background-image: url('../../assets/background-img.png');
+    background-image: url('/images/background-img.png');
     background-size: repeat;
     position: absolute;
     opacity: 0.1;

@@ -1,7 +1,6 @@
 import React from 'react'
 import './ChatHeader.css'
-import { aeropuertoBot } from '../../utils/contact'
-import profile from '../../assets/aeropuerto-profile.png'
+import { aeropuertoBot } from '../../services/contact'
 import { useInfo } from '../../Context/InfoContext'
 import { useMenu } from '../../Context/MenuContext'
 import { useSearch } from '../../Context/SearchContext'
@@ -12,7 +11,7 @@ const ChatHeader = () => {
     const {setSearch} = useSearch()
     return (
         <header className='chat-header'>
-            <img src={profile} alt="profile" className='chat-header-profile' onClick={() => {
+            <img src="/images/aeropuerto-profile.png" alt="profile" className='chat-header-profile' onClick={() => {
                     setInfo(true)
                     setSearch(false)
                 }}/>

@@ -1,7 +1,6 @@
 import React from 'react'
-import pepeProfile from '../../assets/pepe-profile.jpg'
 import './ProfileContainer.css'
-import { pepeBot } from '../../utils/contact'
+import { pepeBot } from '../../services/contact'
 
 const ProfileContainer = () => {
     return (
@@ -11,7 +10,7 @@ const ProfileContainer = () => {
             </header>
             <div className='profile-body-container'>
                 <div className='profile-image-container'>
-                    <img src={pepeProfile} alt="profile" className='profile-image-large'/>
+                    <img src="/images/pepe-profile.jpg" alt="profile" className='profile-image-large'/>
                 </div>
                 <div className='profile-info-container'>
                     <span className='profile-your-name'>Tu nombre</span>

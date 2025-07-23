@@ -1,7 +1,6 @@
 import React from 'react'
 import './SettingsContainer.css'
-import pepeProfile from '../../assets/pepe-profile.jpg'
-import {pepeBot} from '../../utils/contact'
+import {pepeBot} from '../../services/contact'
 
 const SettingsContainer = () => {
     return (
@@ -17,7 +16,7 @@ const SettingsContainer = () => {
                 <input className='settings-input' type='text' placeholder='Buscar en los ajustes' name='search' autoComplete='off'></input>
             </form>
             <div className='settings-profile-container'>
-                <img src={pepeProfile} alt='pepe-profile' className='settings-profile'/>
+                <img src="/images/pepe-profile.jpg" alt='pepe-profile' className='settings-profile'/>
                 <div className='settings-info-container'>
                     <p className='settings-username'>{pepeBot.name}</p>
                     <span className='settings-status'>{pepeBot.info}</span>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './ChatsListContainer.css'
 import ChatsListContact from '../ChatsListContact/ChatsListContact'
-import { aeropuertoBot } from '../../utils/contact'
+import { aeropuertoBot } from '../../services/contact'
 import { useMessage } from '../../Context/MessagesContext'
 import ChatListNotFound from '../ChatsListContact/ChatListNotFound'
 import { useChatsListButtons } from '../../Context/ChatsListButtonsContext'

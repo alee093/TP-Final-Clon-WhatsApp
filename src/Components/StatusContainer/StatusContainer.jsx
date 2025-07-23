@@ -1,6 +1,5 @@
 import React from 'react'
 import './StatusContainer.css'
-import pepeProfile from '../../assets/pepe-profile.jpg'
 
 const StatusContainer = () => {
     return (
@@ -17,7 +16,7 @@ const StatusContainer = () => {
                 </div>
             </header>
             <div className='my-status-container'>
-                <img src={pepeProfile} alt="profile" className='my-status-profile'/>
+                <img src="/images/pepe-profile.jpg" alt="profile" className='my-status-profile'/>
                 <div className='status-info-container'>
                     <p className='my-status'>Mi estado</p>
                     <span className='add-status-message'>Haz clic para añadir una actualización de estado</span>

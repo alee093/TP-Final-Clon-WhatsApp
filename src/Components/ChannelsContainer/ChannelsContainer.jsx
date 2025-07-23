@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './ChannelsContainer.css'
-import whatsappProfile from '../../assets/whatsapp-logo.webp'
 
 const ChannelsContainer = () => {
     const [follow, setFollow] = useState("Seguir")
@@ -17,7 +16,7 @@ const ChannelsContainer = () => {
                 <p className='channels-bottom-text'>A continuación, busca canales para seguir.</p>
             </div>
             <div className='whatsapp-channel-container'>
-                <img className='whatsapp-channel-image' src={whatsappProfile} alt="whatsapp" />
+                <img className='whatsapp-channel-image' src="/images/whatsapp-logo.png" alt="whatsapp" />
                     <div className='whatsapp-channel-name-button-container'>
                         <div className='whatsapp-channel-info-container'>
                             <p className='whatsapp-channel-name'>WhatsApp</p>

@@ -1,7 +1,6 @@
 import React from 'react'
 import './ChatInfoBody.css'
-import profile from '../../assets/aeropuerto-profile.png'
-import {aeropuertoBot} from '../../utils/contact'
+import {aeropuertoBot} from '../../services/contact'
 import { useProfileImage } from '../../Context/ProfileImageContext'
 
 const ChatInfoBody = () => {
@@ -9,7 +8,7 @@ const ChatInfoBody = () => {
     return (
         <div className='chat-info-body'>
             <div className='chat-info-profile-container'>
-                <img src={profile} alt="profile" className='chat-info-profile' onClick={() => {setProfileImage(true)}}/>
+                <img src="/images/aeropuerto-profile.png" alt="profile" className='chat-info-profile' onClick={() => {setProfileImage(true)}}/>
                 <h3 className='chat-info-profile-name'>{aeropuertoBot.name}
                     <svg viewBox="0 0 18 18" height="18" width="18" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" className='chat-info-profile-verified'><title>psa-verified</title><polygon id="Star-2" fill="#00DA60" points="9,16 7.1,16.9 5.8,15.2 3.7,15.1 3.4,13 1.5,12 2.2,9.9 1.1,8.2 2.6,6.7 2.4,4.6 4.5,4 5.3,2 7.4,2.4 9,1.1 10.7,2.4 12.7,2 13.6,4 15.6,4.6 15.5,6.7 17,8.2 15.9,9.9 16.5,12 14.7,13 14.3,15.1 12.2,15.2 10.9,16.9 "></polygon><polygon id="Check-Icon" fill="#FFFFFF" points="13.1,7.3 12.2,6.5 8.1,10.6 5.9,8.5 5,9.4 8,12.4 "></polygon></svg>
                 </h3>
