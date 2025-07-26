@@ -38,3 +38,9 @@ hr{
     background-color: #0c1317;
     border: none;
 }
+@media(max-width: 768px){
+    .status-container{
+        width: 100%;
+        max-width: none;
+    }
+}

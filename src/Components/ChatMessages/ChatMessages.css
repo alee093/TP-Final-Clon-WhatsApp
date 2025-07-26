@@ -1,11 +1,12 @@
 .chat-messages-container{
     max-height: calc(100vh - 128px);
+    height: 100%;
     position: relative;
     z-index: 2;
     padding: 15px 55px;
     overflow-y: scroll;
     max-width: calc(100vw - 414px);
-    width: 100%;
+    min-width: 100%;
     overflow-x: hidden;
 }
 .container-for-menu{
@@ -54,7 +55,7 @@
     display: flex;
     font-size: 11px;
     gap: 5px;
-    width: 75px;
+    width: 85px;
     justify-content: center;
     position: absolute;
     bottom: 3px;
@@ -152,4 +153,16 @@
 }
 .message-box-option:hover{
     background-color: #111b21;
+}
+
+@media(max-width: 1300px){
+    .chat-messages-container{
+        padding: 15px 20px;
+    }
+    .chat-message-bot, .chat-message-user{
+        max-width: 85%;
+    }
+    .chat-message-text{
+        padding: 0px 65px 10px 0px;
+    }
 }

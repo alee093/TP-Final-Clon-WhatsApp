@@ -3,12 +3,14 @@ import './ChatMessages.css'
 import { useMessage } from '../../Context/MessagesContext'
 import ChatMenu from '../ChatMenu/ChatMenu'
 import { useMenu } from '../../Context/MenuContext'
+import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatMessages = () => {
     const { messages, setMessages } = useMessage()
     const bottomRef = useRef(null)
     const {menu} = useMenu()
     const [activeMenu, setActiveMenu] = useState(null)
+    const {hideInfo, isLaptop} = useHideComponents()
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -32,7 +34,7 @@ const ChatMessages = () => {
     }, [])
 
     return (
-        <div className='container-for-menu'>
+        <div className='container-for-menu' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}>
             <div className='chat-messages-container'>
                 {messages.map((message) => (
                     <div key={message.id} className={`chat-message ${message.sender === 'user' ? 'chat-message-user-container' : 'chat-message-bot-container'}`}>

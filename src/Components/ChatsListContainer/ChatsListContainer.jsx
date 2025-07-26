@@ -8,6 +8,7 @@ import { useChatsListButtons } from '../../Context/ChatsListButtonsContext'
 import NoReadChats from '../NoChats/NoReadChats'
 import NoFavoriteChats from '../NoChats/NoFavoriteChats'
 import NoGroups from '../NoChats/NoGroups'
+import { useHideComponents } from '../../Context/HideComponents'
 
 
 
@@ -19,8 +20,10 @@ const ChatsListContainer = () => {
     const lastMessage = messages[messages.length - 1]?.text.toLowerCase() || ""
     const matchesFilter = aeropuertoBot.name.toLowerCase().includes(searchTerm.toLowerCase()) || lastMessage.includes(searchTerm.toLowerCase())
 
+    const {hide, setHide, isMobile} = useHideComponents()
+
     return (
-        <div className='chats-list-container'>
+        <div className='chats-list-container' style={{display: (isMobile && hide) ? "none" : "block"}} onClick={() => {setHide(true)}}>
             <header className='chats-list-header'>
                 <h1 className='chats-list-header-title'>Chats</h1>
                 <div className='chats-list-header-buttons-container'>

@@ -45,3 +45,13 @@
     cursor: pointer;
     margin-top: 40px;
 }
+@media(max-width: 500px){
+    .community-body svg{
+        width: 250px;
+    }
+}
+@media(max-width: 400px){
+    .community-body svg{
+        width: 180px;
+    }
+}

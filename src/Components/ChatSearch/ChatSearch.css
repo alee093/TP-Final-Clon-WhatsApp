@@ -86,6 +86,7 @@
     gap: 5px;
     border-top: 1px solid #222c33;
     cursor: pointer;
+    max-width: 500px;
 }
 .chat-search-message:hover{
     background-color: #202c33;
@@ -99,4 +100,13 @@
     color: #8696A0;
     font-size: 14px;
     font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1100px){
+    .chat-search-container{
+        width: 100%;
+        border-left: none;
+    }
 }

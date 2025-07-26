@@ -18,6 +18,9 @@
     color: #e9edf0;
     font-size: 22px;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 .chats-list-header-buttons-container{
     display: flex;
@@ -80,11 +83,12 @@
     font-weight: 400;
 }
 .chats-list-buttons-container{
-    height: 42px;
+    min-height: 42px;
     display: flex;
     padding: 10px 16px 7px 0px;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 }
 .chats-list-buttons{
     padding: 6px 12px;
@@ -116,4 +120,9 @@
     height: 32px;
     display: flex;
     align-items: end;
+}
+@media(max-width: 768px){
+    .chats-list-container{
+        max-width: 100%;
+    }
 }

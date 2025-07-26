@@ -4,6 +4,7 @@ import { useInfo } from '../../Context/InfoContext'
 import { useMenu } from '../../Context/MenuContext'
 import { useMessage } from '../../Context/MessagesContext'
 import { useNavigate } from 'react-router'
+import { useHideComponents } from '../../Context/HideComponents'
 
 
 const ChatMenu = () => {
@@ -12,6 +13,7 @@ const ChatMenu = () => {
     const {setMessages} = useMessage()
     const navigate = useNavigate()
     const menuRef = useRef(null)
+    const {hideChat, setHideInfo} = useHideComponents()
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -29,6 +31,7 @@ const ChatMenu = () => {
             <div className='menu-options' onClick={() => {
                     setInfo(true)
                     setMenu(!menu)
+                    setHideInfo(true)
                 }}>
                 Info. del contacto
             </div>

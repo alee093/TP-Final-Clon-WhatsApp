@@ -3,14 +3,18 @@ import './ChatsListContact.css'
 import {aeropuertoBot} from '../../services/contact'
 import { useMessage } from '../../Context/MessagesContext'
 import { useNavigate, useLocation } from 'react-router'
+import { useHideComponents } from '../../Context/HideComponents'
 const ChatsListContact = () => {
     const navigate = useNavigate()
     const {messages} = useMessage()
     const isSelected = useLocation().pathname === "/chat"
+    const {hideChat, setHide, setHideChat, isMobile} = useHideComponents()
     return (
         <div className='chats-list-contact-container'>
-            <div className={isSelected ? "chats-list-contact-selected" : "chats-list-contact"} onClick={() => {
+            <div className={isSelected ? "chats-list-contact-selected" : "chats-list-contact"} style={{backgroundColor: (isMobile && !hideChat) ? "transparent" : ""}} onClick={() => {
                     navigate("/chat")
+                    setHideChat(true)
+                    setHide(true)
                 }}>
                 <img className='chats-list-contact-image' src="/images/aeropuerto-profile.png" alt="profile" />
                 <div className='chats-list-contact-info'>

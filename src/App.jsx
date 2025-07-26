@@ -8,28 +8,31 @@ import AppRouter from './routes/AppRouter'
 import { DownloadWindowProvider } from './Context/DownloadWindowContext'
 import { ChatsListButtonsProvider } from './Context/ChatsListButtonsContext'
 import { HeaderButtonsProvider } from './Context/HeaderButtonsContext'
+import { HideComponentsProvider } from './Context/HideComponents'
 
 function App() {
 
   return (
     <div>
-      <HeaderButtonsProvider>
-        <ChatsListButtonsProvider>
-          <DownloadWindowProvider>
-            <SearchProvider>
-              <MenuProvider>
-                <ProfileImageProvider>
-                  <InfoProvider>
-                    <MessagesProvider>
-                      <AppRouter />
-                    </MessagesProvider>
-                  </InfoProvider>
-                </ProfileImageProvider>
-              </MenuProvider>
-            </SearchProvider>
-          </DownloadWindowProvider>
-        </ChatsListButtonsProvider>
-      </HeaderButtonsProvider>
+      <HideComponentsProvider>
+        <HeaderButtonsProvider>
+          <ChatsListButtonsProvider>
+            <DownloadWindowProvider>
+              <SearchProvider>
+                <MenuProvider>
+                  <ProfileImageProvider>
+                    <InfoProvider>
+                      <MessagesProvider>
+                        <AppRouter />
+                      </MessagesProvider>
+                    </InfoProvider>
+                  </ProfileImageProvider>
+                </MenuProvider>
+              </SearchProvider>
+            </DownloadWindowProvider>
+          </ChatsListButtonsProvider>
+        </HeaderButtonsProvider>
+      </HideComponentsProvider>
     </div>
   )
 }

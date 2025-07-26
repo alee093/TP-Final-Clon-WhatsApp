@@ -7,16 +7,18 @@ import { useInfo } from '../../Context/InfoContext'
 import ChatInfo from '../ChatInfo/ChatInfo'
 import { useSearch } from '../../Context/SearchContext'
 import ChatSearch from '../ChatSearch/ChatSearch'
+import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatContainer = () => {
     const {search} = useSearch()
     const {info} = useInfo()
+    const {hideChat, isMobile, hideInfo, isLaptop} = useHideComponents()
 
     return (
-        <div className='chat-container'>
-            <div className='chat-background'></div>
-            <div className='chat-header-messages-input-container'>
-                <ChatHeader />
+        <div className='chat-container' style={{display: (!isMobile || hideChat) ? 'flex' : 'none', justifyContent: (isLaptop && hideInfo) ? 'center' : ''}} >
+            <div className='chat-background' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}></div>
+            <div className='chat-header-messages-input-container' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}>
+                <ChatHeader/>
                 <ChatMessages />
                 <ChatInput />
             </div>
