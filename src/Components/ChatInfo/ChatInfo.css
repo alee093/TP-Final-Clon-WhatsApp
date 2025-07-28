@@ -6,9 +6,9 @@
     z-index: 2;
     border-left: 1px solid #222c33;
 }
-@media(max-width: 1100px){
+@media(max-width: 1150px){
     .chat-info-container{
+        min-width: 0;
         width: 100%;
-        border-left: none;
     }
 }

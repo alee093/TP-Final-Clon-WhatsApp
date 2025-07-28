@@ -1,11 +1,9 @@
 import React from 'react'
 import './DownloadContainer.css'
-import { useHideComponents } from '../../Context/HideComponents'
 
 const DownloadContainer = () => {
-    const { isMobile } = useHideComponents()
     return (
-        <div className='download-container' style={{display: (isMobile) ? 'none' : 'flex'}}>
+        <div className='download-container'>
             <div className='content-container'>
                 <img src='https://static.whatsapp.net/rsrc.php/v4/y6/r/wa669aeJeom.png' alt="" className='laptop-image'/>
                 <h1 className='download-title'>Descarga WhatsApp para Windows</h1>

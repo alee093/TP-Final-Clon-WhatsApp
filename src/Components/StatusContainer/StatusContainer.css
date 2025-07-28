@@ -40,7 +40,6 @@ hr{
 }
 @media(max-width: 768px){
     .status-container{
-        width: 100%;
-        max-width: none;
+        max-width: 100%;
     }
 }

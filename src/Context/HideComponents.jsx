@@ -6,14 +6,11 @@ const HideComponentsContext = createContext()
 export const useHideComponents = () => useContext(HideComponentsContext)
 
 export const HideComponentsProvider = ({ children }) => {
-    const [hide, setHide] = useState(true)
-    const [hideChat, setHideChat] = useState(true)
     const [hideInfo, setHideInfo] = useState(false)
-    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-    const isLaptop = useMediaQuery({ query: '(max-width: 1100px)' })
+    const isLaptop = useMediaQuery({ query: '(max-width: 1150px)' })
 
     return (
-        <HideComponentsContext.Provider value={{ hide, setHide, hideChat, setHideChat, isMobile, setHideInfo, hideInfo, isLaptop }}>
+        <HideComponentsContext.Provider value={{ setHideInfo, hideInfo, isLaptop }}>
             {children}
         </HideComponentsContext.Provider>
     )

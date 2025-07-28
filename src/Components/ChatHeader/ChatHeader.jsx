@@ -4,16 +4,19 @@ import { aeropuertoBot } from '../../services/contact'
 import { useInfo } from '../../Context/InfoContext'
 import { useMenu } from '../../Context/MenuContext'
 import { useSearch } from '../../Context/SearchContext'
+import { useNavigate } from 'react-router'
 import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatHeader = () => {
     const {setInfo} = useInfo()
     const {menu, setMenu} = useMenu()
     const {setSearch} = useSearch()
-    const {hide, setHide, hideChat, setHideChat, isMobile, setHideInfo, hideInfo, isLaptop} = useHideComponents()
+    const navigate = useNavigate()
+    const {setHideInfo} = useHideComponents()
+
     return (
-        <header className='chat-header' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}>
-            <span className='chat-header-back-icon' style={{display: isMobile ? 'flex' : 'none'}} onClick={() => {setHideChat(false), setHide(false)}}>
+        <header className='chat-header'>
+            <span className='chat-header-back-icon' onClick={() => navigate('/')}>
                 <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px"><path fill="#aebbc2" d="M12,4l1.4,1.4L7.8,11H20v2H7.8l5.6,5.6L12,20l-8-8L12,4z"></path></svg>
             </span>
             <img src="/images/aeropuerto-profile.png" alt="profile" className='chat-header-profile' onClick={() => {

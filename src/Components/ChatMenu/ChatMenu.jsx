@@ -13,7 +13,7 @@ const ChatMenu = () => {
     const {setMessages} = useMessage()
     const navigate = useNavigate()
     const menuRef = useRef(null)
-    const {hideChat, setHideInfo} = useHideComponents()
+    const { setHideInfo } = useHideComponents()
 
     useEffect(() => {
         const handleClickOutside = (event) => {

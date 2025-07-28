@@ -1,12 +1,10 @@
 import React from 'react'
 import './ChatInput.css'
 import { useMessage } from '../../Context/MessagesContext'
-import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatInput = () => {
     const { addMessage } = useMessage()
     const firstMessage = "Estoy en el estacionamiento de Bariloche"
-    const { isLaptop, hideInfo } = useHideComponents()
     
     const handleSubmit = (event) => { 
         event.preventDefault()
@@ -17,7 +15,7 @@ const ChatInput = () => {
         
     }
     return (
-        <div className='chat-input-container' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}>
+        <div className='chat-input-container'>
             <button className='chat-plus-button' onClick={() => alert("Funcionalidad en desarrollo")}>
                 <svg viewBox="0 0 24 24" width="30" preserveAspectRatio="xMidYMid meet" className='chat-plus-icon' version="1.1" x="0px" y="0px"><title>plus</title><path fill="#d0d7db" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path></svg>
             </button>

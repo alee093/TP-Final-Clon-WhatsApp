@@ -58,33 +58,32 @@
     white-space: nowrap;
     margin-top: 3px;
 }
-@media(max-width: 768px){
+@media (max-width: 768px){
     .chats-list-contact-info{
-        width: 100%;
-        max-width: none;
+        max-width: 100%;
     }
     .chats-list-contact-message{
-        max-width: 400px;
+        max-width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
-@media(max-width: 568px){
+@media (max-width: 668px){
     .chats-list-contact-message{
         max-width: 300px;
     }
 }
-@media(max-width: 468px){
+@media (max-width: 500px){
     .chats-list-contact-message{
-        max-width: 200px;
+        max-width: 150px;
     }
-    .chats-list-contact-info h3{
+}
+@media (max-width: 400px){
+    .chats-list-contact-name{
+        max-width: 93px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 93px;
-    }
-}
-@media(max-width: 368px){
-    .chats-list-contact-message{
-        max-width: 100px;
     }
 }

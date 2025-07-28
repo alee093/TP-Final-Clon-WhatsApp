@@ -54,17 +54,3 @@
     display: flex;
     margin-right: 15px;
 }
-
-@media(max-width: 1024px){
-    .chat-header-name{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 110px;
-    }
-}
-@media(max-width: 380px){
-    .chat-header-name{
-        width: 70px;
-    }
-}

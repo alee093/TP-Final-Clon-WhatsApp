@@ -70,3 +70,15 @@
 .following{
     background-color: #0a332c;
 }
+@media(max-width: 400px){
+    .whatsapp-channel-message{
+        max-width: 45px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .follow-button{
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+}

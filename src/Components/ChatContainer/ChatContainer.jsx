@@ -12,12 +12,12 @@ import { useHideComponents } from '../../Context/HideComponents'
 const ChatContainer = () => {
     const {search} = useSearch()
     const {info} = useInfo()
-    const {hideChat, isMobile, hideInfo, isLaptop} = useHideComponents()
+    const {hideInfo, setHideInfo, isLaptop} = useHideComponents()
 
     return (
-        <div className='chat-container' style={{display: (!isMobile || hideChat) ? 'flex' : 'none', justifyContent: (isLaptop && hideInfo) ? 'center' : ''}} >
-            <div className='chat-background' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}></div>
-            <div className='chat-header-messages-input-container' style={{display: (isLaptop && hideInfo) ? 'none' : 'flex'}}>
+        <div className='chat-container' style={{justifyContent: hideInfo && isLaptop ? "center" : "start"}}>
+            <div className='chat-background'></div>
+            <div className='chat-header-messages-input-container' style={{display: hideInfo && isLaptop ? "none" : "flex"}}>
                 <ChatHeader/>
                 <ChatMessages />
                 <ChatInput />

@@ -65,3 +65,21 @@
     position: relative;
     top: 2px
 }
+
+@media(max-width: 880px){
+    .download-container{
+        padding: 0 10px;
+    }
+    .download-title{
+        font-size: 24px;
+    }
+    .laptop-image{
+        width: 200px;
+        height: auto;
+    }
+}
+@media(max-width: 768px){
+    .download-container{
+        display: none;
+    }
+}

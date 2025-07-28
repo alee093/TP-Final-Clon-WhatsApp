@@ -8,9 +8,8 @@ import { useChatsListButtons } from '../../Context/ChatsListButtonsContext'
 import NoReadChats from '../NoChats/NoReadChats'
 import NoFavoriteChats from '../NoChats/NoFavoriteChats'
 import NoGroups from '../NoChats/NoGroups'
-import { useHideComponents } from '../../Context/HideComponents'
-
-
+import { useMediaQuery } from 'react-responsive'
+import { useLocation } from 'react-router'
 
 const ChatsListContainer = () => {
     const { messages } = useMessage()
@@ -20,10 +19,14 @@ const ChatsListContainer = () => {
     const lastMessage = messages[messages.length - 1]?.text.toLowerCase() || ""
     const matchesFilter = aeropuertoBot.name.toLowerCase().includes(searchTerm.toLowerCase()) || lastMessage.includes(searchTerm.toLowerCase())
 
-    const {hide, setHide, isMobile} = useHideComponents()
+    const isSelected = useLocation().pathname === "/chat"
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+    const hideComponents = 'block'
+    const showComponents = 'none'
+
 
     return (
-        <div className='chats-list-container' style={{display: (isMobile && hide) ? "none" : "block"}} onClick={() => {setHide(true)}}>
+        <div className='chats-list-container' style={{ display: (isMobile && isSelected) ? showComponents : hideComponents }}>
             <header className='chats-list-header'>
                 <h1 className='chats-list-header-title'>Chats</h1>
                 <div className='chats-list-header-buttons-container'>

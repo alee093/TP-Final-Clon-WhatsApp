@@ -5,7 +5,7 @@ import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatInfoHeader = () => {
     const {setInfo} = useInfo()
-    const {hideInfo, setHideInfo} = useHideComponents()
+    const {setHideInfo} = useHideComponents()
     return (
         <header className='chat-info-header'>
             <button className='chat-info-header-close-button' onClick={() => {

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './SideHeader.css'
 import { useHeaderButtons } from '../../Context/HeaderButtonsContext'
 import { useNavigate } from 'react-router'
-import { useHideComponents } from '../../Context/HideComponents'
+import { useLocation } from 'react-router'
+import { useMediaQuery } from 'react-responsive'
 
 const SideHeader = () => {
     const {chat, setChat, status, setStatus, channels, setChannels, community, setCommunity, settings, setSettings, profile, setProfile} = useHeaderButtons()
@@ -16,11 +17,14 @@ const SideHeader = () => {
         setProfile(section === 'profile')
         navigate('/')
         }
+    
+    const isSelected = useLocation().pathname === "/chat"
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+    const hideComponents = 'flex'
+    const showComponents = 'none'
 
-
-    const {hide, setHide, isMobile} = useHideComponents()
     return (
-        <header className='side-header-container' style={{display: (isMobile && hide) ? 'none' : 'flex'}}>
+        <header className='side-header-container' style={{display: (isMobile && isSelected) ? showComponents : hideComponents}}>
             <div className='top-buttons-container'>
                 <button className={chat ? 'buttons active' : 'buttons'} onClick={() => handleSelect('chat')}>
                     <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" fill="none"><title>chats-outline</title><path d="M4.8384 8.45501L5 8.70356V9V17.8333C5 18.7538 5.7462 19.5 6.6667 19.5H20.3333C21.2538 19.5 22 18.7538 22 17.8333V6.66667C22 5.74619 21.2538 5 20.3333 5H2.5927L4.8384 8.45501Z" stroke="#aebbc2" strokeWidth="2"></path><line x1="10" y1="10" x2="17" y2="10" stroke="#aebbc2" strokeWidth="2" stroke-linecap="round"></line><line x1="10" y1="14" x2="15" y2="14" stroke="#aebbc2" strokeWidth="2" strokeLinecap="round"></line></svg>
