@@ -53,4 +53,5 @@
 .chat-header-back-icon{
     display: flex;
     margin-right: 15px;
+    cursor: pointer;
 }

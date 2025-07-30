@@ -7,11 +7,11 @@ import { useNavigate, useLocation } from 'react-router'
 const ChatsListContact = () => {
     const navigate = useNavigate()
     const {messages} = useMessage()
-    const isSelected = useLocation().pathname === "/chat"
+    const isSelected = useLocation().pathname === "/chat/aeropuerto"
     return (
         <div className='chats-list-contact-container'>
             <div className={isSelected ? "chats-list-contact-selected" : "chats-list-contact"} onClick={() => {
-                    navigate("/chat")
+                    navigate("/chat/aeropuerto")
                 }}>
                 <img className='chats-list-contact-image' src="/images/aeropuerto-profile.png" alt="profile" />
                 <div className='chats-list-contact-info'>
