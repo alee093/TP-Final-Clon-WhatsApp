@@ -159,7 +159,7 @@
         padding: 15px 20px;
     }
     .chat-message-text{
-        padding-right: 30px;
+        padding-right: 60px;
         padding-bottom: 10px;
     }
     .chat-message-bot, .chat-message-user{

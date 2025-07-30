@@ -8,8 +8,20 @@ const ChatSearch = () => {
     const {messages} = useMessage()
     const [filteredMessages, setFilteredMessages] = useState([])
     const {setHideInfo} = useHideComponents()
+    const {setSearch} = useSearch()
+    const [searchTerm, setSearchTerm] = useState('')
+
+    const highlightText = (text, query) => {
+        if (!query) return text
+        const regex = new RegExp(`(${query})`, 'ig');
+        const parts = text.split(regex)
+            return parts.map((part, i) =>
+                regex.test(part) ? <span key={i} className="highlight">{part}</span> : part
+            )
+    }
     const handleChange = (event) => {
         const input = event.target.value.trim()
+        setSearchTerm(input)
         if (input === '') {
             setFilteredMessages([])
             return
@@ -21,7 +33,6 @@ const ChatSearch = () => {
 
         setFilteredMessages(results)
     }
-    const {setSearch} = useSearch()
 
     return (
         <div className='chat-search-container'>
@@ -48,7 +59,9 @@ const ChatSearch = () => {
                 {filteredMessages.map((message, index) => (
                     <div key={index} className='chat-search-message'>
                         <span className='chat-search-message-time'>{message.time}</span>
-                        <span className='chat-search-message-text'>{message.text}</span>
+                        <span className='chat-search-message-text'>
+                            {highlightText(message.text, searchTerm)}
+                        </span>
                     </div>
                 ))}
             </div>

@@ -18,7 +18,7 @@ const SideHeader = () => {
 
         switch (section) {
             case 'chat':
-                navigate('/chats')
+                navigate('/')
                 break
             case 'status':
                 navigate('/status')

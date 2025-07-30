@@ -53,7 +53,7 @@ const ChatsListContainer = () => {
                     <button className={groups ? "chats-list-buttons-active" : "chats-list-buttons"} onClick={() => {setAll(false); setRead(false); setFavorites(false); setGroups(true)}}>Grupos</button>
                 </div>
             </div>
-            {matchesFilter && !read && !favorites && !groups && <ChatsListContact />}
+            {matchesFilter && !read && !favorites && !groups && <ChatsListContact searchTerm={searchTerm} />}
             {!matchesFilter && <ChatListNotFound />}
             {read && <NoReadChats /> }
             {favorites && <NoFavoriteChats /> }

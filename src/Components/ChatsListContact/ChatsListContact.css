@@ -42,12 +42,15 @@
     height: 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    position: relative;
+    white-space: pre-wrap;
 }
 .chats-list-contact-time{
     color: #8696a0;
     font-size: 12px;
     font-weight: 300;
+    position: absolute;
+    right: 0;
 }
 .chats-list-contact-message{
     color: #8696a0;
@@ -57,6 +60,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-top: 3px;
+}
+.highlight{
+    color: #00a884;
 }
 @media (max-width: 768px){
     .chats-list-contact-info{

@@ -37,7 +37,7 @@ const ChatMenu = () => {
             </div>
             <div className='menu-options' onClick={
                 () => {setMenu(!menu)
-                navigate("/chats") 
+                navigate("/") 
                 }}>
                 Cerrar chat
             </div>
