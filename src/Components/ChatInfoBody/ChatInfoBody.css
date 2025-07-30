@@ -1,6 +1,6 @@
 .chat-info-body{
     overflow-y: scroll;
-    height: calc(100dvh - 64px);
+    height: 100%;
 }
 .chat-info-body::-webkit-scrollbar {
     width: 3px; 

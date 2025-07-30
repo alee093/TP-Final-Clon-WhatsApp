@@ -5,10 +5,11 @@ import ChatMenu from '../ChatMenu/ChatMenu'
 import { useMenu } from '../../Context/MenuContext'
 
 const ChatMessages = () => {
-    const { messages, setMessages } = useMessage()
+    const { messages, setMessages, setHighlightedMessageId, highlightedMessageId } = useMessage()
     const bottomRef = useRef(null)
     const {menu} = useMenu()
     const [activeMenu, setActiveMenu] = useState(null)
+    const messagesRef = useRef({})
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -30,12 +31,33 @@ const ChatMessages = () => {
         document.addEventListener('click', handleClickOutside)
         return () => document.removeEventListener('click', handleClickOutside)
     }, [])
+    const highlightAndScrollToMessage = (id) => {
+        const element = messagesRef.current[id]?.current
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
+            element.classList.add('highlighted-message');
+            setTimeout(() => {
+                element.classList.remove('highlighted-message')
+            }, 2000)
+        }
+    }
+    useEffect(() => {
+        if (highlightedMessageId) {
+            highlightAndScrollToMessage(highlightedMessageId)
+            setHighlightedMessageId(null)
+        }
+    }, [highlightedMessageId])
 
     return (
         <div className='container-for-menu'>
             <div className='chat-messages-container'>
-                {messages.map((message) => (
-                    <div key={message.id} className={`chat-message ${message.sender === 'user' ? 'chat-message-user-container' : 'chat-message-bot-container'}`}>
+                {messages.map((message) => {
+                    if(!messagesRef.current[message.id]){
+                        messagesRef.current[message.id] = React.createRef()
+                    }
+                    return (
+                    <div key={message.id} ref={messagesRef.current[message.id]} className={`chat-message ${message.sender === 'user' ? 'chat-message-user-container' : 'chat-message-bot-container'}`}>
                         <div className={message.sender === 'user' ? 'chat-message-user' : 'chat-message-bot'}>
                             <p className='chat-message-text'>{message.text}</p>
                             <div className='chat-time-seen-container'>
@@ -56,7 +78,7 @@ const ChatMessages = () => {
                                 <svg viewBox="0 0 8 13" height="13" width="8" preserveAspectRatio="xMidYMid meet" className={message.sender === "user" ? "tail-icon-user" : "tail-icon-bot"} version="1.1" x="0px" y="0px"><title>tail-out</title><path opacity="0.13" d="M5.188,1H0v11.193l6.467-8.625 C7.526,2.156,6.958,1,5.188,1z"></path><path d="M5.188,0H0v11.193l6.467-8.625C7.526,1.156,6.958,0,5.188,0z"></path></svg>
                         </span>
                     </div>
-                ))}
+                )})}
                 <div ref={bottomRef} />
             </div>
             {menu && <ChatMenu/>}

@@ -1,5 +1,5 @@
 .chat-messages-container{
-    max-height: calc(100vh - 128px);
+    max-height: calc(100dvh - 128px);
     height: 100%;
     position: relative;
     z-index: 2;

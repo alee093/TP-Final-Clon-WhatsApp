@@ -1,5 +1,5 @@
 .chat-search-container{
-    height: 100vh;
+    height: 100dvh;
     width: 410px;
     background-color: #111b21;
     position: relative;
@@ -102,6 +102,11 @@
     font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.highlighted-message {
+    background-color: #aebbc21b;
+    transition: background-color 0.5s ease;
+    border-radius: 10px;
 }
 @media(max-width: 1150px){
     .chat-search-container{

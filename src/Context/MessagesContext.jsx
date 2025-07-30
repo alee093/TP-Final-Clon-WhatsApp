@@ -9,6 +9,7 @@ export const useMessage = () => useContext(MessagesContext)
 export const MessagesProvider = ({ children }) => {
     const [messages, setMessages] = useState([])
     const idCounter = useRef(1)
+    const [highlightedMessageId, setHighlightedMessageId] = useState(null)
 
     const addMessage = (text, sender = 'user') => {
         const newMessage = {
@@ -74,7 +75,7 @@ export const MessagesProvider = ({ children }) => {
     }
 
     return (
-        <MessagesContext.Provider value={{ messages, addMessage, removeMessage, setMessages }}>
+        <MessagesContext.Provider value={{ messages, addMessage, removeMessage, setMessages, highlightedMessageId, setHighlightedMessageId }}>
             {children}
         </MessagesContext.Provider>
     )

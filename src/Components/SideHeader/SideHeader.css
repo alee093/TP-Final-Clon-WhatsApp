@@ -1,6 +1,6 @@
 .side-header-container{
     background-color: #202c33;
-    height: 100vh;
+    height: 100dvh;
     max-width: 64px;
     width: 100%;
     flex-direction: column;

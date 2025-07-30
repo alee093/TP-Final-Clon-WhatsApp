@@ -5,7 +5,7 @@ import { useMessage } from '../../Context/MessagesContext'
 import { useHideComponents } from '../../Context/HideComponents'
 
 const ChatSearch = () => {
-    const {messages} = useMessage()
+    const {messages, setHighlightedMessageId} = useMessage()
     const [filteredMessages, setFilteredMessages] = useState([])
     const {setHideInfo} = useHideComponents()
     const {setSearch} = useSearch()
@@ -57,7 +57,11 @@ const ChatSearch = () => {
             </div>
             <div className='chat-search-results'>
                 {filteredMessages.map((message, index) => (
-                    <div key={index} className='chat-search-message'>
+                    <div key={index} className='chat-search-message' onClick={() => {
+                        setHighlightedMessageId(message.id)
+                        setSearch(false)
+                        setHideInfo(false)
+                    }}>
                         <span className='chat-search-message-time'>{message.time}</span>
                         <span className='chat-search-message-text'>
                             {highlightText(message.text, searchTerm)}
