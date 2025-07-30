@@ -2,6 +2,7 @@ import React from 'react'
 import './ProfileImage.css'
 import { useProfileImage } from '../../Context/ProfileImageContext'
 import {aeropuertoBot} from '../../services/contact'
+import profile from '../../../public/images/aeropuerto-profile.png'
 
 const ProfileImage = () => {
     const {setProfileImage} = useProfileImage()

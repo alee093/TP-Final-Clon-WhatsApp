@@ -74,3 +74,20 @@
 .settings-list:hover{
     background-color: #233138;
 }
+.settings-list-container{
+    overflow-y: scroll;
+    height: calc(100dvh - 213px);
+}
+.settings-list-container::-webkit-scrollbar {
+    width: 3px; 
+}
+.settings-list-container::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.settings-list-container::-webkit-scrollbar-thumb {
+    background-color: #88888833;
+    border-radius: 4px;
+}
+.settings-list-container::-webkit-scrollbar-thumb:hover {
+    background: #88888833;
+}

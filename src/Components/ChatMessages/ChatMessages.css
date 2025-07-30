@@ -154,3 +154,15 @@
 .message-box-option:hover{
     background-color: #111b21;
 }
+@media (max-width: 1400px){
+    .chat-messages-container{
+        padding: 15px 20px;
+    }
+    .chat-message-text{
+        padding-right: 30px;
+        padding-bottom: 10px;
+    }
+    .chat-message-bot, .chat-message-user{
+        max-width: 90%;
+    }
+}

@@ -39,3 +39,20 @@
     outline: none;
     cursor: pointer;
 }
+.profile-body-container{
+    overflow-y: scroll;
+    height: calc(100dvh - 64px);
+}
+.profile-body-container::-webkit-scrollbar {
+    width: 3px; 
+}
+.profile-body-container::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.profile-body-container::-webkit-scrollbar-thumb {
+    background-color: #88888833;
+    border-radius: 4px;
+}
+.profile-body-container::-webkit-scrollbar-thumb:hover {
+    background: #88888833;
+}

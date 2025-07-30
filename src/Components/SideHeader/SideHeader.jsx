@@ -15,7 +15,30 @@ const SideHeader = () => {
         setCommunity(section === 'community')
         setSettings(section === 'settings')
         setProfile(section === 'profile')
-        navigate('/')
+
+        switch (section) {
+            case 'chat':
+                navigate('/chat')
+                break
+            case 'status':
+                navigate('/status')
+                break
+            case 'channels':
+                navigate('/channels')
+                break
+            case 'community':
+                navigate('/community')
+                break
+            case 'settings':
+                navigate('/settings')
+                break
+            case 'profile':
+                navigate('/profile')
+                break
+            default:
+                navigate('/')
+                break
+        }   
         }
     
     const isSelected = useLocation().pathname === "/chat"

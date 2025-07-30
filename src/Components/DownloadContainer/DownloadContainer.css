@@ -83,3 +83,8 @@
         display: none;
     }
 }
+@media(max-height: 450px){
+    .secure-message, .secure-icon{
+        display: none;
+    }
+}

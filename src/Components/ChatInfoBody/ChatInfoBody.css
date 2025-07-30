@@ -2,6 +2,19 @@
     overflow-y: scroll;
     height: calc(100dvh - 64px);
 }
+.chat-info-body::-webkit-scrollbar {
+    width: 3px; 
+}
+.chat-info-body::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.chat-info-body::-webkit-scrollbar-thumb {
+    background-color: #88888833;
+    border-radius: 4px;
+}
+.chat-info-body::-webkit-scrollbar-thumb:hover {
+    background: #88888833;
+}
 
 .chat-info-profile-container{
     width: 100%;
