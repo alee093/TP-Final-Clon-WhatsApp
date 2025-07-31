@@ -57,8 +57,8 @@ const ChatMessages = () => {
                         messagesRef.current[message.id] = React.createRef()
                     }
                     return (
-                    <div key={message.id} ref={messagesRef.current[message.id]} className={`chat-message ${message.sender === 'user' ? 'chat-message-user-container' : 'chat-message-bot-container'}`}>
-                        <div className={message.sender === 'user' ? 'chat-message-user' : 'chat-message-bot'}>
+                    <div key={message.id} className={`chat-message ${message.sender === 'user' ? 'chat-message-user-container' : 'chat-message-bot-container'}`}>
+                        <div className={message.sender === 'user' ? 'chat-message-user' : 'chat-message-bot'} ref={messagesRef.current[message.id]}>
                             <p className='chat-message-text'>{message.text}</p>
                             <div className='chat-time-seen-container'>
                                 <span className='chat-message-time'>{message.time}</span>

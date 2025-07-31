@@ -9,30 +9,33 @@ import { DownloadWindowProvider } from './Context/DownloadWindowContext'
 import { ChatsListButtonsProvider } from './Context/ChatsListButtonsContext'
 import { HeaderButtonsProvider } from './Context/HeaderButtonsContext'
 import { HideComponentsProvider } from './Context/HideComponents'
+import { EditingProvider } from './Context/EditingContext'
 
 function App() {
 
   return (
     <div>
-      <HideComponentsProvider>
-        <HeaderButtonsProvider>
-          <ChatsListButtonsProvider>
-            <DownloadWindowProvider>
-              <SearchProvider>
-                <MenuProvider>
-                  <ProfileImageProvider>
-                    <InfoProvider>
-                      <MessagesProvider>
-                        <AppRouter />
-                      </MessagesProvider>
-                    </InfoProvider>
-                  </ProfileImageProvider>
-                </MenuProvider>
-              </SearchProvider>
-            </DownloadWindowProvider>
-          </ChatsListButtonsProvider>
-        </HeaderButtonsProvider>
-      </HideComponentsProvider>
+      <EditingProvider>
+        <HideComponentsProvider>
+          <HeaderButtonsProvider>
+            <ChatsListButtonsProvider>
+              <DownloadWindowProvider>
+                <SearchProvider>
+                  <MenuProvider>
+                    <ProfileImageProvider>
+                      <InfoProvider>
+                        <MessagesProvider>
+                          <AppRouter />
+                        </MessagesProvider>
+                      </InfoProvider>
+                    </ProfileImageProvider>
+                  </MenuProvider>
+                </SearchProvider>
+              </DownloadWindowProvider>
+            </ChatsListButtonsProvider>
+          </HeaderButtonsProvider>
+        </HideComponentsProvider>
+      </EditingProvider>
     </div>
   )
 }

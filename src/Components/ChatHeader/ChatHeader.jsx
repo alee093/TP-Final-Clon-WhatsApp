@@ -13,12 +13,13 @@ const ChatHeader = () => {
     const {setSearch} = useSearch()
     const navigate = useNavigate()
     const {setHideInfo} = useHideComponents()
+    const {isMobile} = useHideComponents()
 
     return (
         <header className='chat-header'>
-            <span className='chat-header-back-icon' onClick={() => navigate('/')}>
+            {isMobile &&<span className='chat-header-back-icon' onClick={() => navigate('/')}>
                 <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px"><path fill="#aebbc2" d="M12,4l1.4,1.4L7.8,11H20v2H7.8l5.6,5.6L12,20l-8-8L12,4z"></path></svg>
-            </span>
+            </span>}
             <img src="/images/aeropuerto-profile.png" alt="profile" className='chat-header-profile' onClick={() => {
                     setInfo(true)
                     setSearch(false)

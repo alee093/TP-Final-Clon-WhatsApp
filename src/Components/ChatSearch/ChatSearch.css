@@ -104,9 +104,8 @@
     text-overflow: ellipsis;
 }
 .highlighted-message {
-    background-color: #aebbc21b;
+    background-color: #005c4bb0;
     transition: background-color 0.5s ease;
-    border-radius: 10px;
 }
 @media(max-width: 1150px){
     .chat-search-container{

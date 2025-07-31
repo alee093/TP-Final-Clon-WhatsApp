@@ -55,3 +55,33 @@ label{
     color: #8797a1;
     font-size: 15px;
 }
+.chat-plus-button:hover{
+    transform: rotate(405deg);
+    transition: all 0.5s ease-in-out;
+}
+.emoji-picker{
+    background-color: #202c33 !important;
+    
+}
+.emoji-picker h2{
+    background-color: #202c33 !important;
+}
+.emoji-picker input{
+    background-color: #2a3942 !important;
+}
+.emoji-picker div{
+    border: none !important;
+}
+.epr_b8hfyo::-webkit-scrollbar {
+    width: 3px !important; 
+}
+.epr_b8hfyo::-webkit-scrollbar-track {
+    background: transparent !important; 
+}
+.epr_b8hfyo::-webkit-scrollbar-thumb {
+    background-color: #88888833 !important;
+    border-radius: 4px !important;
+}
+.epr_b8hfyo::-webkit-scrollbar-thumb:hover {
+    background: #88888833 !important;
+}
