@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    word-break: break-all;
 }
 .profile-warning{
     font-size: 14px;
@@ -55,4 +56,26 @@
 }
 .profile-body-container::-webkit-scrollbar-thumb:hover {
     background: #88888833;
+}
+.profile-edit-input {
+    font-size: 16px;
+    background-color: transparent;
+    border-bottom: 2px solid #00a884;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: white;
+    padding: 4px 8px;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+}
+.profile-edit-form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+.profile-edit-button{
+    margin-left: 20px;
 }

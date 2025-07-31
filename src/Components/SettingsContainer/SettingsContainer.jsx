@@ -1,8 +1,9 @@
 import React from 'react'
 import './SettingsContainer.css'
-import {pepeBot} from '../../services/contact'
+import { useEditing } from '../../Context/EditingContext'
 
 const SettingsContainer = () => {
+    const { name, info } = useEditing()
     return (
         <div className='status-container'>
             <header className='channels-header'>
@@ -18,8 +19,8 @@ const SettingsContainer = () => {
             <div className='settings-profile-container'>
                 <img src="/images/pepe-profile.jpg" alt='pepe-profile' className='settings-profile'/>
                 <div className='settings-info-container'>
-                    <p className='settings-username'>{pepeBot.name}</p>
-                    <span className='settings-status'>{pepeBot.info}</span>
+                    <p className='settings-username'>{name}</p>
+                    <span className='settings-status'>{info}</span>
                 </div>
             </div>
             <div className='settings-list-container'>

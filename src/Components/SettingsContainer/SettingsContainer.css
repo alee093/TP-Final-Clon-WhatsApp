@@ -44,6 +44,7 @@
     font-size: 14px;
     font-weight: 400;
     color: #aebac1;
+    word-break: break-all;
 }
 .settings-list{
     list-style: none;
