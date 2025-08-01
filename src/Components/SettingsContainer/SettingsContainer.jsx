@@ -1,35 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './SettingsContainer.css'
 import { useEditing } from '../../Context/EditingContext'
+import AccountContainer from './AccountContainer/AccountContainer'
+import PrivacyContainer from './PrivacyContainer/PrivacyContainer'
 
 const SettingsContainer = () => {
     const { name, info } = useEditing()
+    const [account, setAccount] = useState(false)
+    const [privacy, setPrivacy] = useState(false)
     return (
         <div className='status-container'>
-            <header className='channels-header'>
+            <header className='channels-header'  style={{display: privacy || account ? "none" : "flex"}}>
                 <h1 className='chats-list-header-title'>Ajustes</h1>
             </header>
-            <form className='settings-form'>
+            <form className='settings-form'  style={{display: privacy || account ? "none" : "flex"}}>
                 <label>Search</label>
                 <button type='submit' className='chats-list-search-button'>
                     <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" ><title>search</title><path fill="#8797a1" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path></svg>
                 </button>
                 <input className='settings-input' type='text' placeholder='Buscar en los ajustes' name='search' autoComplete='off'></input>
             </form>
-            <div className='settings-profile-container'>
+            <div className='settings-profile-container'  style={{display: privacy || account ? "none" : "flex"}}>
                 <img src="/images/pepe-profile.jpg" alt='pepe-profile' className='settings-profile'/>
                 <div className='settings-info-container'>
                     <p className='settings-username'>{name}</p>
                     <span className='settings-status'>{info}</span>
                 </div>
             </div>
-            <div className='settings-list-container'>
+            <div className='settings-list-container'  style={{display: privacy || account ? "none" : "block"}}>
                 <ul>
-                    <li className='settings-list'>
+                    <li className='settings-list' onClick={() => setAccount(true)}>
                         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#d0d7db"></path></svg>
                         <p className='settings-list-text'>Cuenta</p>
                     </li>
-                    <li className='settings-list'>
+                    <li className='settings-list' onClick={() => setPrivacy(true)}>
                         <svg viewBox="0 0 28 35" height="23" width="23" preserveAspectRatio="xMidYMid meet"  version="1.1"><path d="M14,1.10204082 C18.5689011,1.10204082 22.2727273,4.80586698 22.2727273,9.37476809 L22.272,12.1790408 L22.3564837,12.181606 C24.9401306,12.294858 27,14.4253101 27,17.0368705 L27,29.4665309 C27,32.1506346 24.824104,34.3265306 22.1400003,34.3265306 L5.85999974,34.3265306 C3.175896,34.3265306 1,32.1506346 1,29.4665309 L1,17.0368705 C1,14.3970988 3.10461313,12.2488858 5.72742704,12.178644 L5.72727273,9.37476809 C5.72727273,4.80586698 9.43109889,1.10204082 14,1.10204082 Z M14,19.5600907 C12.0418995,19.5600907 10.4545455,21.2128808 10.4545455,23.2517007 C10.4545455,25.2905206 12.0418995,26.9433107 14,26.9433107 C15.9581005,26.9433107 17.5454545,25.2905206 17.5454545,23.2517007 C17.5454545,21.2128808 15.9581005,19.5600907 14,19.5600907 Z M14,4.79365079 C11.4617216,4.79365079 9.39069048,6.79417418 9.27759175,9.30453585 L9.27272727,9.52092352 L9.272,12.1760408 L18.727,12.1760408 L18.7272727,9.52092352 C18.7272727,6.91012289 16.6108006,4.79365079 14,4.79365079 Z" fill="#d0d7db"></path></svg>
                         <p className='settings-list-text'>Privacidad</p>
                     </li>
@@ -55,6 +59,8 @@ const SettingsContainer = () => {
                     </li>
                 </ul>
             </div>
+            {account && <AccountContainer setAccount={setAccount} account={account}/>}
+            {privacy && <PrivacyContainer setPrivacy={setPrivacy} privacy={privacy} />}
         </div>
     )
 }
