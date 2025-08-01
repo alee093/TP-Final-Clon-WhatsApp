@@ -1,0 +1,34 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+.new-community-header{
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+}
+.new-community-back-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.new-community-button{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00a884;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+}
+.bi-arrow-right-short{
+    font-size: 34px;
+    color: #e9edf0;
+}
