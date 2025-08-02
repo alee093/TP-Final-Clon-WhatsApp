@@ -1,0 +1,45 @@
+.help-image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    gap: 20px;
+}
+.help-image{
+    background-size: 1600%;
+    height: 258px;
+    width: 258px;
+    background-image: url('https://static.whatsapp.net/rsrc.php/v4/yf/r/4l5Jzvrg84p.png');
+    background-repeat: no-repeat;
+    animation: slider 1s steps(15) infinite;
+    animation-play-state: running;
+    background-position-x: 0%;
+}
+
+@keyframes slider {
+    to {
+        background-position-x: 100%
+    }
+}
+@media(max-width: 500px){
+    .help-image{
+        height: 200px;
+        width: 200px;
+    }
+}
+
+.help-image-span{
+    color: #8d9599;
+    font-size: 14px;
+}
+.padding-24{
+    padding: 0 24px;
+    display: flex;
+    gap: 24px;
+}
+.svg-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

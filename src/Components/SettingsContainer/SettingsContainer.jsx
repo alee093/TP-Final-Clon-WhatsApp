@@ -5,6 +5,9 @@ import AccountContainer from './AccountContainer/AccountContainer'
 import PrivacyContainer from './PrivacyContainer/PrivacyContainer'
 import ChatsContainer from './ChatsContainer/ChatsContainer'
 import NotificationsContainer from './NotificationsContainer/NotificationsContainer'
+import HelpContainer from './HelpContainer/HelpContainer'
+import ExitContainer from './ExitContainer/ExitContainer'
+import ShortcutsContainer from './ShortcutsContainer/ShortcutsContainer'
 
 const SettingsContainer = () => {
     const { name, info } = useEditing()
@@ -12,26 +15,29 @@ const SettingsContainer = () => {
     const [privacy, setPrivacy] = useState(false)
     const [chats, setChats] = useState(false)
     const [notifications, setNotifications] = useState(false)
+    const [help, setHelp] = useState(false)
+    const [exit, setExit] = useState(false)
+    const [shortcuts, setShortcuts] = useState(false)
     return (
         <div className='status-container'>
-            <header className='channels-header'  style={{display: chats || privacy || account || notifications ? "none" : "flex"}}>
+            <header className='channels-header'  style={{display: chats || privacy || account || notifications || help ? "none" : "flex"}}>
                 <h1 className='chats-list-header-title'>Ajustes</h1>
             </header>
-            <form className='settings-form'  style={{display: chats || privacy || account || notifications ? "none" : "flex"}}>
+            <form className='settings-form'  style={{display: chats || privacy || account || notifications || help ? "none" : "flex"}}>
                 <label>Search</label>
                 <button type='submit' className='chats-list-search-button'>
                     <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" ><title>search</title><path fill="#8797a1" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path></svg>
                 </button>
                 <input className='settings-input' type='text' placeholder='Buscar en los ajustes' name='search' autoComplete='off'></input>
             </form>
-            <div className='settings-profile-container'  style={{display: chats || privacy || account || notifications ? "none" : "flex"}}>
+            <div className='settings-profile-container'  style={{display: chats || privacy || account || notifications || help ? "none" : "flex"}}>
                 <img src="/images/pepe-profile.jpg" alt='pepe-profile' className='settings-profile'/>
                 <div className='settings-info-container'>
                     <p className='settings-username'>{name}</p>
                     <span className='settings-status'>{info}</span>
                 </div>
             </div>
-            <div className='settings-list-container'  style={{display: chats || privacy || account || notifications ? "none" : "block"}}>
+            <div className='settings-list-container'  style={{display: chats || privacy || account || notifications || help ? "none" : "block"}}>
                 <ul>
                     <li className='settings-list' onClick={() => setAccount(true)}>
                         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C9.5 19.2 7.29 17.92 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C16.71 17.92 14.5 19.2 12 19.2Z" fill="#d0d7db"></path></svg>
@@ -49,15 +55,15 @@ const SettingsContainer = () => {
                         <svg viewBox="0 0 24 24" height="27" width="27" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px"><path fill="#d0d7db" d="M12,21.7c0.9,0,1.7-0.8,1.7-1.7h-3.4C10.3,20.9,11.1,21.7,12,21.7z M17.6,16.5v-4.7 c0-2.7-1.8-4.8-4.3-5.4V5.8c0-0.7-0.6-1.3-1.3-1.3s-1.3,0.6-1.3,1.3v0.6C8.2,7,6.4,9.1,6.4,11.8v4.7l-1.7,1.7v0.9h14.6v-0.9 L17.6,16.5z"></path></svg>
                         <p className='settings-list-text'>Notificaciones</p>
                     </li>
-                    <li className='settings-list'>
+                    <li className='settings-list' onClick={() => setShortcuts(true)}>
                         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1"><path fill="#d0d7db" d="M 10.851562 12.648438 L 13.148438 12.648438 L 12 9 Z M 20 8.691406 L 20 6 C 20 4.898438 19.101562 4 18 4 L 15.308594 4 L 13.410156 2.101562 C 12.628906 1.320312 11.359375 1.320312 10.582031 2.101562 L 8.691406 4 L 6 4 C 4.898438 4 4 4.898438 4 6 L 4 8.691406 L 2.101562 10.589844 C 1.320312 11.371094 1.320312 12.640625 2.101562 13.421875 L 4 15.320312 L 4 18 C 4 19.101562 4.898438 20 6 20 L 8.691406 20 L 10.589844 21.898438 C 11.371094 22.679688 12.640625 22.679688 13.421875 21.898438 L 15.320312 20 L 18 20 C 19.101562 20 20 19.101562 20 18 L 20 15.308594 L 21.898438 13.410156 C 22.679688 12.628906 22.679688 11.359375 21.898438 10.578125 Z M 14.089844 15.398438 L 13.601562 14 L 10.398438 14 L 9.910156 15.398438 C 9.78125 15.761719 9.449219 16 9.070312 16 C 8.449219 16 8.019531 15.390625 8.230469 14.808594 L 10.671875 7.949219 C 10.871094 7.378906 11.398438 7 12 7 C 12.601562 7 13.128906 7.378906 13.339844 7.941406 L 15.78125 14.800781 C 15.988281 15.378906 15.558594 15.988281 14.941406 15.988281 C 14.550781 16 14.21875 15.761719 14.089844 15.398438 Z M 14.089844 15.398438 "></path></svg>
                         <p className='settings-list-text'>Atajos del teclado</p>
                     </li>
-                    <li className='settings-list'>
+                    <li className='settings-list' onClick={() => setHelp(true)}>
                         <svg height="27" width="27" preserveAspectRatio="xMidYMid meet" fill="none"><path fill="#d0d7db" d="M11.95 18c.35 0 .65-.12.89-.36s.36-.54.36-.89-.12-.65-.36-.89a1.2 1.2 0 0 0-.89-.36c-.35 0-.65.12-.89.36a1.2 1.2 0 0 0-.36.89c0 .35.12.65.36.89s.54.36.89.36Zm.05 4a10.1 10.1 0 0 1-9.21-6.1A9.74 9.74 0 0 1 2 12a10.1 10.1 0 0 1 6.1-9.21A9.74 9.74 0 0 1 12 2a10.1 10.1 0 0 1 9.21 6.1c.53 1.22.79 2.52.79 3.9s-.26 2.68-.79 3.9a10.1 10.1 0 0 1-5.31 5.31A9.74 9.74 0 0 1 12 22Zm.1-14.3c.42 0 .78.13 1.09.4.3.27.46.6.46 1 0 .37-.11.7-.34.97-.22.29-.48.55-.76.8-.38.34-.72.7-1.01 1.1-.3.4-.44.85-.44 1.35 0 .24.09.43.26.6.18.15.38.23.62.23s.46-.08.63-.25c.18-.17.29-.38.34-.63a2 2 0 0 1 .45-.93c.23-.28.48-.54.75-.79.38-.37.71-.77.99-1.2.27-.43.41-.92.41-1.45 0-.85-.35-1.55-1.04-2.09A3.8 3.8 0 0 0 12.1 6c-.63 0-1.24.13-1.81.4a2.8 2.8 0 0 0-1.31 1.22.9.9 0 0 0-.12.64c.04.23.16.4.34.52.23.13.48.17.73.12a1 1 0 0 0 .62-.43 1.95 1.95 0 0 1 1.55-.77Z"></path></svg>
                         <p className='settings-list-text'>Ayuda</p>
                     </li>
-                    <li className='settings-list'>
+                    <li className='settings-list' onClick={() => setExit(true)}>
                         <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" ><path fill="#f25c6e" d="M16.6,8.1l1.2-1.2l5.1,5.1l-5.1,5.1l-1.2-1.2l3-3H8.7v-1.8h10.9L16.6,8.1z M3.8,19.9h9.1 c1,0,1.8-0.8,1.8-1.8v-1.4h-1.8v1.4H3.8V5.8h9.1v1.4h1.8V5.8c0-1-0.8-1.8-1.8-1.8H3.8C2.8,4,2,4.8,2,5.8v12.4 C2,19.1,2.8,19.9,3.8,19.9z"></path></svg>
                         <p className='settings-list-text log-out'>Cerrar sesión</p>
                     </li>
@@ -67,6 +73,9 @@ const SettingsContainer = () => {
             {privacy && <PrivacyContainer setPrivacy={setPrivacy} privacy={privacy} />}
             {chats && <ChatsContainer setChats={setChats} chats={chats}/>}
             {notifications && <NotificationsContainer setNotifications={setNotifications} notifications={notifications}/>}
+            {help && <HelpContainer setHelp={setHelp} help={help}/>}
+            {shortcuts && <ShortcutsContainer setShortcuts={setShortcuts} shortcuts={shortcuts} />}
+            {exit && <ExitContainer setExit={setExit} exit={exit}/>}
         </div>
     )
 }

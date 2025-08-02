@@ -3,8 +3,8 @@ import './ChatsContainer.css'
 
 const ChatsContainer = ({setChats, chats}) => {
     const [active, setActive] = useState(false)
-    const [active2, setActive2] = useState(false)
-    const [active3, setActive3] = useState(false)
+    const [active2, setActive2] = useState(true)
+    const [active3, setActive3] = useState(true)
     return (
         <>
             <header className='new-community-header'>
@@ -61,9 +61,9 @@ const ChatsContainer = ({setChats, chats}) => {
                     </div>
                     <div className='container-with-green-switch'>
                         <p className='privacy-list-item-p'>
-                            Correcíon ortográfica
+                            Reemplaza texto con emojis
                             <span className='privacy-list-item-span'>
-                                Revisa la ortografía mientras escribes.
+                                El emoji reemplazara el texto especifico mientras escribes.
                             </span>
                         </p>
                         <div className={active2 ? "green-switch-active" : "green-switch"} onClick={() => setActive2(!active2)}>

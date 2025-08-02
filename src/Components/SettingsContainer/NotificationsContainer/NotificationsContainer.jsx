@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import './NotificationsContainer.css'
 
 const NotificationsContainer = ({notifications, setNotifications}) => {
     const [active, setActive] = useState(false)
     const [active2, setActive2] = useState(false)
     const [active3, setActive3] = useState(false)
-    const [active4, setActive4] = useState(false)
+    const [active4, setActive4] = useState(true)
     const [active5, setActive5] = useState(false)
     const [active6, setActive6] = useState(false)
     
@@ -31,7 +30,7 @@ const NotificationsContainer = ({notifications, setNotifications}) => {
                             <div className={active ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch' style={{opacity: active2 ? 1 : 0.3}}>
                         <p className='privacy-list-item-p'>
                             Mostrar vista previa
                         </p>
@@ -39,7 +38,7 @@ const NotificationsContainer = ({notifications, setNotifications}) => {
                             <div className={active2 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch'  style={{opacity: active3 ? 1 : 0.3}}>
                         <p className='privacy-list-item-p'>
                             Mostrar notificaciones de reacciones
                         </p>
