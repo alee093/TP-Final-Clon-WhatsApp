@@ -55,3 +55,25 @@
     margin-right: 15px;
     cursor: pointer;
 }
+@media(max-width: 450px){
+    .chat-header-name{
+        width: 110px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .chat-header-name-icon svg{
+        display: none;
+    }
+}
+@media(max-width: 350px){
+    .chat-header-name{
+        width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .chat-header-name-icon svg{
+        display: none;
+    }
+}

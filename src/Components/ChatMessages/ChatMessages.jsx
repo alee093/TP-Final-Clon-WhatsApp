@@ -52,6 +52,14 @@ const ChatMessages = () => {
     return (
         <div className='container-for-menu'>
             <div className='chat-messages-container'>
+                {messages.length === 0 && 
+                    <div className='no-messages-container'>
+                        <a href='https://faq.whatsapp.com/1148840052398648?lang=es' target='_blank'>
+                        <p className='no-messages' >
+                            Esta empresa usa un servicio seguro de Meta para administrar este chat. Haz clic para obtener más información.
+                        </p>
+                        </a>
+                    </div>}
                 {messages.map((message) => {
                     if(!messagesRef.current[message.id]){
                         messagesRef.current[message.id] = React.createRef()

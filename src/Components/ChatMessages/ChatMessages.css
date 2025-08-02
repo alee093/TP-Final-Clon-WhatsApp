@@ -166,3 +166,24 @@
         max-width: 90%;
     }
 }
+.no-messages-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.no-messages{
+    color: #42c7b8;
+    font-size: 12px;
+    background-color: #182229;
+    padding: 5px 12px;
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
