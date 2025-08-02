@@ -1,14 +1,12 @@
 import React, { useEffect, useRef} from 'react'
 import './ChatMenu.css'
-import { useInfo } from '../../Context/InfoContext'
 import { useMenu } from '../../Context/MenuContext'
 import { useMessage } from '../../Context/MessagesContext'
 import { useNavigate } from 'react-router'
 import { useHideComponents } from '../../Context/HideComponents'
 
 
-const ChatMenu = () => {
-    const {setInfo} = useInfo()
+const ChatMenu = ({setInfo}) => {
     const {menu, setMenu} = useMenu()
     const {setMessages} = useMessage()
     const navigate = useNavigate()

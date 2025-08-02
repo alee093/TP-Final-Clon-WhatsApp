@@ -3,10 +3,10 @@ import './ChatInfo.css'
 import ChatInfoHeader from '../ChatInfoHeader/ChatInfoHeader'
 import ChatInfoBody from '../ChatInfoBody/ChatInfoBody'
 
-const ChatInfo = () => {
+const ChatInfo = ({setInfo}) => {
     return (
         <div className='chat-info-container'>
-            <ChatInfoHeader />
+            <ChatInfoHeader setInfo={setInfo}/>
             <ChatInfoBody />
         </div>
     )

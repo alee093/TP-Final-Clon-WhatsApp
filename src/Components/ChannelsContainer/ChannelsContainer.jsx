@@ -8,7 +8,7 @@ const ChannelsContainer = () => {
             <header className='channels-header'>
                 <h1 className='chats-list-header-title'>Canales</h1>
                     <button className='chats-list-header-button'>
-                        <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"><title>plus</title><path fill="#aebbc2" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path></svg>
+                        <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"><path fill="#aebbc2" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path></svg>
                     </button>
             </header>
             <div className='channels-text-container'>

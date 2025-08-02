@@ -1,12 +1,9 @@
 import './App.css'
-import { InfoProvider } from './Context/InfoContext'
 import { MessagesProvider } from './Context/MessagesContext'
 import { ProfileImageProvider } from './Context/ProfileImageContext'
 import { MenuProvider } from './Context/MenuContext'
-import { SearchProvider } from './Context/SearchContext'
 import AppRouter from './routes/AppRouter'
 import { DownloadWindowProvider } from './Context/DownloadWindowContext'
-import { ChatsListButtonsProvider } from './Context/ChatsListButtonsContext'
 import { HeaderButtonsProvider } from './Context/HeaderButtonsContext'
 import { HideComponentsProvider } from './Context/HideComponents'
 import { EditingProvider } from './Context/EditingContext'
@@ -18,21 +15,15 @@ function App() {
       <EditingProvider>
         <HideComponentsProvider>
           <HeaderButtonsProvider>
-            <ChatsListButtonsProvider>
-              <DownloadWindowProvider>
-                <SearchProvider>
-                  <MenuProvider>
-                    <ProfileImageProvider>
-                      <InfoProvider>
-                        <MessagesProvider>
-                          <AppRouter />
-                        </MessagesProvider>
-                      </InfoProvider>
-                    </ProfileImageProvider>
-                  </MenuProvider>
-                </SearchProvider>
-              </DownloadWindowProvider>
-            </ChatsListButtonsProvider>
+            <DownloadWindowProvider>
+              <MenuProvider>
+                <ProfileImageProvider>
+                  <MessagesProvider>
+                    <AppRouter />
+                    </MessagesProvider>
+                </ProfileImageProvider>
+              </MenuProvider>
+            </DownloadWindowProvider>
           </HeaderButtonsProvider>
         </HideComponentsProvider>
       </EditingProvider>

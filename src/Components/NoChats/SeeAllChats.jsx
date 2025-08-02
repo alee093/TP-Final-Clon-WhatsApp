@@ -1,9 +1,7 @@
 import React from 'react'
 import './NoChats.css'
-import { useChatsListButtons } from '../../Context/ChatsListButtonsContext'
 
-const SeeAllChats = () => {
-    const {setAll, setRead, setFavorites, setGroups} = useChatsListButtons()
+const SeeAllChats = ({setAll, setRead, setFavorites, setGroups}) => {
     return (
         <div className='see-all-chats-container'>
             <span className='see-all-chats' onClick={() => {setAll(true); setRead(false); setFavorites(false); setGroups(false)}}>Ver todos los chats</span>
