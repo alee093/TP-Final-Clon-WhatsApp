@@ -19,64 +19,64 @@ const NotificationsContainer = ({notifications, setNotifications}) => {
             <div className='privacy-body'>
                 <div className='privacy-body-separator'>
                     <span className='text-green'>Mensajes</span>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch'  onClick={() => setActive(!active)}>
                         <p className='privacy-list-item-p'>
                             Notificaciones de mensajes
                             <span className='privacy-list-item-span'>
                                 Se muestran notificaciones de mensajes nuevos.
                             </span>
                         </p>
-                        <div className={active ? "green-switch-active" : "green-switch"} onClick={() => setActive(!active)}>
+                        <div className={active ? "green-switch-active" : "green-switch"}>
                             <div className={active ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch' style={{opacity: active2 ? 1 : 0.3}}>
+                    <div className='container-with-green-switch' style={{opacity: active2 ? 1 : 0.3}}  onClick={() => setActive2(!active2)}>
                         <p className='privacy-list-item-p'>
                             Mostrar vista previa
                         </p>
-                        <div className={active2 ? "green-switch-active" : "green-switch"} onClick={() => setActive2(!active2)}>
+                        <div className={active2 ? "green-switch-active" : "green-switch"}>
                             <div className={active2 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'  style={{opacity: active3 ? 1 : 0.3}}>
+                    <div className='container-with-green-switch'  style={{opacity: active3 ? 1 : 0.3}}  onClick={() => setActive3(!active3)}>
                         <p className='privacy-list-item-p'>
                             Mostrar notificaciones de reacciones
                         </p>
-                        <div className={active3 ? "green-switch-active" : "green-switch"} onClick={() => setActive3(!active3)}>
+                        <div className={active3 ? "green-switch-active" : "green-switch"}>
                             <div className={active3 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch'  onClick={() => setActive4(!active4)}>
                         <p className='privacy-list-item-p'>
                             Sincronización en segundo plano
                             <span className='privacy-list-item-span'>
                                 Sincroniza los mensajes en segundo plano para obtener un rendimiento más rápido.
                             </span>
                         </p>
-                        <div className={active4 ? "green-switch-active" : "green-switch"} onClick={() => setActive4(!active4)}>
+                        <div className={active4 ? "green-switch-active" : "green-switch"}>
                             <div className={active4 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch' onClick={() => setActive5(!active5)}>
                         <p className='privacy-list-item-p'>
                             Sonidos para mensajes entrantes
                             <span className='privacy-list-item-span'>
                                 Se reproduce un sonido cuando hay mensajes entrantes.
                             </span>
                         </p>
-                        <div className={active5 ? "green-switch-active" : "green-switch"} onClick={() => setActive5(!active5)}>
+                        <div className={active5 ? "green-switch-active" : "green-switch"}>
                             <div className={active5 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
-                    <div className='container-with-green-switch'>
+                    <div className='container-with-green-switch' onClick={() => setActive6(!active6)}>
                         <p className='privacy-list-item-p'>
                             Sonidos para mensajes salientes
                             <span className='privacy-list-item-span'>
                                 Se reproduce un sonido cuando hay mensajes salientes.
                             </span>
                         </p>
-                        <div className={active5 ? "green-switch-active" : "green-switch"} onClick={() => setActive6(!active5)}>
-                            <div className={active5 ? "green-switch-circle-active" : "green-switch-circle"}></div>
+                        <div className={active6 ? "green-switch-active" : "green-switch"}>
+                            <div className={active6 ? "green-switch-circle-active" : "green-switch-circle"}></div>
                         </div>
                     </div>
                 </div>

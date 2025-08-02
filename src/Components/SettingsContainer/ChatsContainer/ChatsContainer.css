@@ -4,6 +4,15 @@
     align-items: center;
     height: 78px;
     gap: 20px;
+    cursor: pointer;
+}
+@media(max-width: 450px){
+    .container-with-green-switch{
+        min-height: 78px;
+        height: auto;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
 }
 .green-switch,
 .green-switch-active {
