@@ -2,7 +2,6 @@ import React from 'react'
 import './ProfileImage.css'
 import { useProfileImage } from '../../Context/ProfileImageContext'
 import {aeropuertoBot} from '../../services/contact'
-import profile from '../../../public/images/aeropuerto-profile.png'
 
 const ProfileImage = () => {
     const {setProfileImage} = useProfileImage()
@@ -10,7 +9,7 @@ const ProfileImage = () => {
         <div className='profile-image-screen-container'>
             <header className='profile-image-header'>
                 <div className='image-name-container'>
-                    <img src={profile} alt="profile" className='profile-image'/>
+                    <img src='/images/aeropuerto-profile.png' alt="profile" className='profile-image'/>
                     <h3 className='profile-image-name'>{aeropuertoBot.name}</h3>
                 </div>
                 <button className='chat-info-header-close-button' onClick={() => {setProfileImage(false)}}>
