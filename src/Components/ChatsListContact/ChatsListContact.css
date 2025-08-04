@@ -92,4 +92,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
     }
+    .chats-list-contact-time{
+        display: none;
+    }
 }
