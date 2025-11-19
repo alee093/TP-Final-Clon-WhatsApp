@@ -1,0 +1,94 @@
+.settings-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: #202c33;
+    height: 35px;
+    border-radius: 8px;
+    margin: 8px 16px;
+}
+.settings-input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #e9edf0;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    margin-left: 5px;
+}
+.settings-input::placeholder{
+    color: #8797a1;
+    font-size: 15px;
+    font-weight: 400;
+}
+.settings-profile-container{
+    height: 98px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.settings-profile{
+    height: 82px;
+    width: 82px;
+    border-radius: 45px;
+}
+.settings-username{
+    font-size: 17px;
+    font-weight: 500;
+    color: #e9edf0;
+}
+.settings-status{
+    font-size: 14px;
+    font-weight: 400;
+    color: #aebac1;
+    word-break: break-all;
+}
+.settings-list{
+    list-style: none;
+    height: 60px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    cursor: pointer;
+}
+.settings-list-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #e9edf0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #202c33;
+}
+.log-out{
+    color: #f25c6e;
+}
+.settings-list svg{
+    min-height: 24px;
+    min-width: 24px;
+}
+.settings-list:hover{
+    background-color: #233138;
+}
+.settings-list-container{
+    overflow-y: scroll;
+    height: calc(100dvh - 213px);
+}
+.settings-list-container::-webkit-scrollbar {
+    width: 3px; 
+}
+.settings-list-container::-webkit-scrollbar-track {
+    background: transparent; 
+}
+.settings-list-container::-webkit-scrollbar-thumb {
+    background-color: #88888833;
+    border-radius: 4px;
+}
+.settings-list-container::-webkit-scrollbar-thumb:hover {
+    background: #88888833;
+}
