@@ -1,0 +1,37 @@
+.side-header-container{
+    background-color: #202c33;
+    height: 100dvh;
+    max-width: 64px;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.top-buttons-container, .bottom-buttons-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.buttons{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.active{
+    background-color: #364147;
+}
+.pepe-profile{
+    height: 32px;
+    width: 32px;
+    border-radius: 16px;
+}
