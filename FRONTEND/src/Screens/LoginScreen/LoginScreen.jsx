@@ -4,6 +4,7 @@ import { login } from '../../services/authService'
 import useForm from '../../hooks/useForm'
 import useFetch from '../../hooks/useFetch'
 import { AuthContext } from '../../Context/AuthContext'
+import "./LoginScreen.css"
 
 const LoginScreen = () => {
   const navigate = useNavigate()
@@ -17,8 +18,12 @@ const LoginScreen = () => {
         alert('Has validado tu mail exitosamente')
       }
     },
-    [] //Solo queremos que se ejecute cuando se monte el componente
+    []
   )
+
+  const goToRegister = () => {
+    navigate('/register')
+  }
   
 
   const LOGIN_FORM_FIELDS = {
@@ -64,16 +69,19 @@ const LoginScreen = () => {
         [response]
     )
   return (
-      <div className="Form-container">
-        <form onSubmit={handleSubmit}>
+    <div className='register-form-container'>
+      <div className="register-form-content-container">
+        <img className='register-whatsapp-logo' src="/images/whatsapp-logo.png" alt="whatsapp-logo"></img>
+        <h1 className='register-form-title'>Inicia Sesion</h1>
+        <form onSubmit={handleSubmit} className='register-form'>
           <div className="form-field">
             <label htmlFor="email">Email: </label>
-            <input  type="text" placeholder="jose@algo.com" value={form_state[LOGIN_FORM_FIELDS.EMAIL]} name={LOGIN_FORM_FIELDS.EMAIL} onChange={onInputChange} id={'email'} />
+            <input  type="text" placeholder="jose@algo.com" value={form_state[LOGIN_FORM_FIELDS.EMAIL]} name={LOGIN_FORM_FIELDS.EMAIL} onChange={onInputChange} id={'email'} className='register-form-input' />
           </div>
 
           <div>
             <label htmlFor="password">Password: </label>
-            <input type="text" placeholder="Josesito206" value={form_state[LOGIN_FORM_FIELDS.PASSWORD]} name={LOGIN_FORM_FIELDS.PASSWORD} onChange={onInputChange} id={'password'} />
+            <input type="text" placeholder="Josesito206" value={form_state[LOGIN_FORM_FIELDS.PASSWORD]} name={LOGIN_FORM_FIELDS.PASSWORD} onChange={onInputChange} id={'password'} className='register-form-input password'/>
           </div>
 
           {error && <span style={{ color: 'red' }}> {error} </span>}
@@ -81,11 +89,13 @@ const LoginScreen = () => {
 
           {
             loading
-              ? <button disabled>Login</button>
-              : <button>Login</button>
+              ? <button disabled className='register-button'>Login</button>
+              : <button className='register-button'>Login</button>
           }
         </form>
+        <a className='register-change-page' onClick={goToRegister}>¿No tienes una cuenta? Registrate</a>
       </div>
+    </div>
       )
 }
 

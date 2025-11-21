@@ -20,7 +20,7 @@ const ChatsListContact = ({searchTerm}) => {
     return (
         <div className='chats-list-contact-container'>
             <div className={isSelected ? "chats-list-contact-selected" : "chats-list-contact"} onClick={() => {
-                    navigate("/chat")
+                    navigate("chat")
                 }}>
                 <img className='chats-list-contact-image' src="/images/aeropuerto-profile.png" alt="profile" />
                 <div className='chats-list-contact-info'>
